@@ -1,0 +1,41 @@
+identity:
+  name: Mistral AI / moderation
+  author: blue_pen5805
+  label:
+    en_US: Mistral AI / moderation
+description:
+  human:
+    en_US: moderation
+  llm: moderation
+parameters:
+  - name: text
+    type: string
+    form: llm
+    required: false
+    label:
+      en_US: text
+    human_description:
+      en_US: text
+    llm_description: text
+output_schema:
+  type: object
+  properties:
+    flagged:
+      type: boolean
+      description: Whether any of the categories are flagged.
+    unsafe_score:
+      type: number
+      description: A score that represents the level of unsafe content in the input.
+    flagged_categories:
+      type: array
+      items:
+        type: string
+      description: A list of the categories that are flagged.
+    category_scores:
+      type: array
+      items:
+        type: number
+      description: A list of the categories along with their scores as predicted by model.
+extra:
+  python:
+    source: tools/moderation.py

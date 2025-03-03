@@ -1,0 +1,29 @@
+version: 0.0.1
+type: plugin
+author: blue_pen5805
+name: moderation-mistalai
+label:
+  en_US: Moderation / Mistral AI
+description:
+  en_US: Mistral AI moderation plugin
+icon: icon_s_en.png
+resource:
+  memory: 1048576
+  permission:
+    tool:
+      enabled: true
+plugins:
+  tools:
+    - provider/mistralai.yaml
+meta:
+  version: 0.0.1
+  arch:
+    - amd64
+    - arm64
+  runner:
+    language: python
+    version: "3.12"
+    entrypoint: main
+created_at: 2025-03-03T08:20:27.0448793Z
+privacy: PRIVACY.md
+verified: false
